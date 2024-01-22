@@ -32,7 +32,14 @@ public class App {
                 System.out.println(ettrandomInt);
             }
         }
-        
+        public class Slumptal {
+            public static void main(String[] args) {
+                Random rand = new Random();
+                int tvårandomInt = rand.nextInt(11); // genererar ett slumptal mellan 0-10
+                System.out.println(tvårandomInt);
+            }
+        }
+
         System.out.println("Spelare 2 är påväg att sparka dig i höften! Ska du 1: ta sparken eller 2: blocka sparken?");
         svar = reader.nextLine();
         if(svar=="1")
