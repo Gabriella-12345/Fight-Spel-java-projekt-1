@@ -12,8 +12,29 @@ public class App {
 
         System.out.println("Använarnamn för spelare 2:" + usernamne);
         System.out.println("Användarman för spelare 1: Sam"); 
-        
+
     
-       
+        System.out.println(" vilken Spelare ska slå första slaget? svara 1 eller 2");
+        String svar = reader.nextLine();
+        if( svar == "2") 
+            {
+                System.out.println("Spelare 2 slog spelare 1 i ansiktet!");
+            }
+            else{
+                System.out.println("Spelare 1 sparkade Spelare 2 i revbenen men missade...");
+            }
+        
+
+        System.out.println("Spelare 2 är påväg att sparka dig i höften! Ska du 1: ta sparken eller 2: blocka sparken?");
+        svar = reader.nextLine();
+        if(svar=="1")
+            {
+            System.out.println("Du bröt benet och du blöder ut på makren för att sam sparkade dig, Game over!");
+            }
+            else{
+                System.out.println("Du fick ont med klarade dig, den här gången...");
+            }
+        
+    }   
     
 }
