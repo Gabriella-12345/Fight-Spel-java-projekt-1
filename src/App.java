@@ -1,13 +1,16 @@
-// Gabriella Jonsson
+// Gabriella Jonsson 
 // Te22a
 import java.util.Random; // impoterar klassen Random
 import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
+        Random rand = new Random();
+        
+
         System.out.println("Hello, World!");
         Scanner reader = new Scanner(System.in);
 
-        System.out.println("Gabriellas Fight spel!");
+        System.out.println("SLÅS MED SAM!");
         System.out.print("Välj ett spelnamn för spelare 2:");
         String usernamne = reader.nextLine();
 
@@ -19,37 +22,15 @@ public class App {
         String svar = reader.nextLine();
         if( svar == "2") 
             {
-                System.out.println("Spelare 2 slog spelare 1 i ansiktet!");
+                System.out.println("Du slog Sam i ansiktet!");
             }
             else{
-                System.out.println("Spelare 1 sparkade Spelare 2 i revbenen men missade...");
+                System.out.println("Sam sparkade dig i revbenen men missade...");
             }
-        
-        public class Slumptal {
-            public static void main(String[] args) {
-                Random rand = new Random();
-                int ettrandomInt = rand.nextInt(11); // genererar ett slumptal mellan 0-10
-                System.out.println(ettrandomInt);
-            }
-        }
-        public class Slumptal {
-            public static void main(String[] args) {
-                Random rand = new Random();
-                int tvårandomInt = rand.nextInt(11); // genererar ett slumptal mellan 0-10
-                System.out.println(tvårandomInt);
-            }
-        }
 
-        System.out.println("Spelare 2 är påväg att sparka dig i höften! Ska du 1: ta sparken eller 2: blocka sparken?");
-        svar = reader.nextLine();
-        if(svar=="1")
-            {
-            System.out.println("Du bröt benet och du blöder ut på makren för att sam sparkade dig, Game over!");
-            }
-            else{
-                System.out.println("Du fick ont med klarade dig, den här gången...");
-            }
-        
-    }   
+        int ettrandomInt = rand.nextInt(11); // genererar ett slumptal mellan 0-10
+        int tvårandomInt = rand.nextInt(11); // genererar ett slumptal mellan 0-10
+
+
     
 }
