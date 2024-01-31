@@ -7,10 +7,10 @@ public class App {
         System.out.println("Hello, World!");
         Scanner reader = new Scanner(System.in);
         Random rand = new Random(); 
-        int hp1 = 10; // Hälsopoäng för sam/spelare 1
-        int hp2 = 10; // Hälsopoäng för spelare 2
+        int hp1 = 5; // Hälsopoäng för sam/spelare 1
+        int hp2 = 5; // Hälsopoäng för spelare 2
 
-        System.out.println("SLÅS MED SAM!" + "\n");
+        System.out.println("SLÅSS MED SAM!" + "\n\n");
 
         System.out.print("Välj ett spelnamn för spelare 2: ");
         String usernamne = reader.nextLine();
@@ -38,7 +38,7 @@ public class App {
         int tvårandomInt = rand.nextInt(11); // Genererar ett slumptal mellan 0-10
        
         System.out.println("Sam är påväg att sparka dig i höften! Kommer du ta eller blocka sparken? ");
-        Thread.sleep( 2000);
+        String enter = reader.nextLine();
 
         if(ettrandomInt>=tvårandomInt) // Jämför de två slumpmässigt genererade talen, spelaren med mindre talet förlorar ett hälsopoäng
         {
@@ -46,16 +46,14 @@ public class App {
             hp2--; // Förlora hälso poäng -1
         }
         else{
-            System.out.println("Du fick ont med klarade dig, den här gången..." + "\n\n");
+            System.out.println("Du fick ont med klarade dig, den här gången..." + "\n");
             // Ingen förlorar hälso poäng
         }
         System.out.println("Sams Hälsopoäng:" + hp1);
-        System.out.println("Dina Hälsopoäng:" + hp2 + "\n\n");
+        System.out.println("Dina Hälsopoäng:" + hp2 + "\n");
             
         System.out.println("Du slår sam i ansiktet trots dina skador...");
-        Thread.sleep( 2000);
-
-        
+        enter = reader.nextLine();
         if(rand.nextInt(2) == 1) // 0-1 , 50/50 chans
             {
                 System.out.println("Sam blockade och clinchade dig");
@@ -91,10 +89,10 @@ public class App {
                 break;
         }
         System.out.println("Sams Hälsopoäng:" + hp1);
-        System.out.println("Dina Hälsopoäng:" + hp2);
+        System.out.println("Dina Hälsopoäng:" + hp2 + "\n");
 
         System.out.println("Sam sparkar ditt lår med sitt smalben, vad händer sen?");
-        Thread.sleep( 2000);
+        enter = reader.nextLine();
 
         if(rand.nextInt(2) == 1) // 0-1 , 50/50 chans
             {
@@ -118,14 +116,14 @@ public class App {
         switch (Val) { 
             case "1":
                 System.out.println("Fegt...");
-                hp1--; 
+                hp1--; // Sam förlorar hp
                 break;
             case "2":
                 System.out.println("Sam blev arg och slog dig i revbenen"); 
-                hp2--; 
+                hp2--; //Spelare 2 förlorar hp
                 break; 
             case "3":
-                System.out.println("Nej, fokus!!!!!!");
+                System.out.println("Nej, fokus!!!!!!" + "\n");
                 hp2--; // Spelare 2 (du) förlorar 1 hälsopoäng
                 break;
         }
