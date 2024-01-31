@@ -6,6 +6,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
         Scanner reader = new Scanner(System.in);
+        
         Random rand = new Random(); 
         int hp1 = 5; // Hälsopoäng för sam/spelare 1
         int hp2 = 5; // Hälsopoäng för spelare 2
@@ -37,7 +38,7 @@ public class App {
         int tvårandomInt = rand.nextInt(11); // Genererar ett slumptal mellan 0-10
        
         System.out.println("Sam är påväg att sparka dig i höften! Kommer du ta eller blocka sparken? ");
-        String enter = reader.nextLine();
+        reader.nextLine();
 
         if(ettrandomInt>=tvårandomInt) // Jämför de två slumpmässigt genererade talen, spelaren med mindre talet förlorar ett hälsopoäng
         {
@@ -52,7 +53,8 @@ public class App {
         System.out.println("Dina Hälsopoäng:" + hp2 + "\n");
             
         System.out.println("Du slår sam i ansiktet trots dina skador...");
-        enter = reader.nextLine();
+        reader.nextLine();
+        
         if(rand.nextInt(2) == 1) // 0-1 , 50/50 chans
             {
                 System.out.println("Sam blockade och clinchade dig");
@@ -91,7 +93,7 @@ public class App {
         System.out.println("Dina Hälsopoäng:" + hp2 + "\n");
 
         System.out.println("Sam sparkar ditt lår med sitt smalben, vad händer sen?");
-        enter = reader.nextLine();
+        reader.nextLine();
 
         if(rand.nextInt(2) == 1) // 0-1 , 50/50 chans
             {
@@ -128,8 +130,9 @@ public class App {
         }
         System.out.println("Sams Hälsopoäng:" + hp1);
         System.out.println("Dina Hälsopoäng:" + hp2);
-
         
+
+       reader.close(); // scanner klagar 
     }   
     
 }
