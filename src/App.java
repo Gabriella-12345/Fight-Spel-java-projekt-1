@@ -11,7 +11,6 @@ public class App {
         int hp2 = 5; // Hälsopoäng för spelare 2
 
         System.out.println("SLÅSS MED SAM!" + "\n\n");
-
         System.out.print("Välj ett spelnamn för spelare 2: ");
         String usernamne = reader.nextLine();
 
