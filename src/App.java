@@ -3,12 +3,17 @@
 import java.util.Random; // Impoterar klassen Random som finns i java bibliotek
 import java.util.Scanner;
 public class App {
+
+    public static String RESET = "\u001B[0m";
+    public static String RED = "\u001B[31m";
+    public static String BLUE = "\u001B[34m";
+    public static String PURPLE = "\u001B[35m";
+
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
         Scanner reader = new Scanner(System.in);
 
-        int runda = 1;
-
+        int runda = 1; // håller koll på vilken runda mna är på
         Random rand = new Random(); 
         int hp1 = 5; // Hälsopoäng för sam/spelare 1
         int hp2 = 5; // Hälsopoäng för spelare 2
@@ -16,9 +21,9 @@ public class App {
         while(hp1 > 0 && hp2 > 0) {
             
             long start_tid = System.currentTimeMillis(); 
-                int tal = 5;
+            int tal = 5;
         
-            System.out.println("SLÅSS MED SAM!" + "\n\n");
+            System.out.println(RED+"SLÅSS MED SAM!" + "\n\n"+RESET);
             System.out.print("Välj ett spelnamn för spelare 2: ");
             String usernamne = reader.nextLine();
 
@@ -39,13 +44,13 @@ public class App {
             }
             
             System.out.println("Sams Hälsopoäng:" + hp1);
-            System.out.println("Dina Hälsopoäng:" + hp2);
+            System.out.println(usernamne + " Hälsopoäng:" + hp2);
             Thread.sleep(4000);
 
             int ettrandomInt = rand.nextInt(11); // Genererar ett slumptal mellan 0-10
             int tvårandomInt = rand.nextInt(11); // Genererar ett slumptal mellan 0-10
         
-            System.out.println("Sam är påväg att sparka dig i höften! Kommer du ta eller blocka sparken? Tyck enter för att fortsätta.");
+            System.out.println("Runda" + runda++ +":Sam är påväg att sparka dig i höften! Kommer du ta eller blocka sparken? Tyck enter för att fortsätta.");
             reader.nextLine();
 
             if(ettrandomInt>=tvårandomInt) // Jämför de två slumpmässigt genererade talen, spelaren med mindre talet förlorar ett hälsopoäng
@@ -58,10 +63,10 @@ public class App {
                 // Ingen förlorar hälso poäng
             }
             System.out.println("Sams Hälsopoäng:" + hp1);
-            System.out.println(usernamne + "Hälsopoäng:" + hp2 + "\n");
+            System.out.println(usernamne + " Hälsopoäng:" + hp2 + "\n");
             Thread.sleep(4000);
                 
-            System.out.println("Du slår sam i ansiktet trots dina skador...Tyck enter för att fortsätta");
+            System.out.println("Runda" + runda++ +":Du slår sam i ansiktet trots dina skador...Tyck enter för att fortsätta");
             reader.nextLine();
             if(rand.nextInt(2) == 1) // 0-1 , 50/50 chans
                 {
@@ -74,10 +79,10 @@ public class App {
                 }
 
             System.out.println("Sams Hälsopoäng:" + hp1);
-            System.out.println(usernamne + "Hälsopoäng:" + hp2 + "\n");
+            System.out.println(usernamne + " Hälsopoäng:" + hp2 + "\n");
             Thread.sleep(4000);
 
-            System.out.println("Du får chansen att skada Sam, Vart väljer du? Svara 1, 2 eller 3.");
+            System.out.println("Runda" + runda++ +":Du får chansen att skada Sam, Vart väljer du? Svara 1, 2 eller 3.");
             System.out.println("1: Högra stortåns nagelband");
             System.out.println("2: Armbågen");
             System.out.println("3: Tibia");
@@ -99,10 +104,10 @@ public class App {
                     break;
             }
             System.out.println("Sams Hälsopoäng:" + hp1);
-            System.out.println(usernamne + "Hälsopoäng:" + hp2 + "\n");
+            System.out.println(usernamne + " Hälsopoäng:" + hp2 + "\n");
             Thread.sleep(4000);
 
-            System.out.println("Sam sparkar ditt lår med sitt smalben, vad händer sen? Tyck enter för att fortsätta");
+            System.out.println("Runda" + runda++ +":Sam sparkar ditt lår med sitt smalben, vad händer sen? Tyck enter för att fortsätta");
             reader.nextLine();
 
             if(rand.nextInt(2) == 1) // 0-1 , 50/50 chans
@@ -116,10 +121,10 @@ public class App {
                 }
                 
             System.out.println("Sams Hälsopoäng:" + hp1);
-            System.out.println(usernamne + "Hälsopoäng:" + hp2 + "\n");
+            System.out.println(usernamne + " Hälsopoäng:" + hp2 + "\n");
             Thread.sleep(4000);
 
-            System.out.println("Sam kommer emot dig vad ska du göra? välj mellan 1, 2 eller 3.");
+            System.out.println("Runda" + runda++ +":Sam kommer emot dig vad ska du göra? välj mellan 1, 2 eller 3.");
             System.out.println("1: Springa iväg!");
             System.out.println("2: Putta iväg honsom");
             System.out.println("3: Äta lunch");
@@ -140,40 +145,33 @@ public class App {
                     break;
             }
             System.out.println("Sams Hälsopoäng:" + hp1);
-            System.out.println(usernamne + "Hälsopoäng:" + hp2 + "\n");
+            System.out.println(usernamne + " Hälsopoäng:" + hp2 + "\n");
             Thread.sleep(4000);
-        
-            reader.close(); // Scanner klagar, stänga Scannern
-
             
             if(hp1==0)
                 {
                     System.out.println("Du vann!");
                     System.out.println("Sams poäng:"+hp1);
-                    System.out.println( usernamne + "poäng:"+hp2);
+                    System.out.println( usernamne + " poäng:"+hp2);
                 }
                 else{
                     System.out.println("Du förlorade!");
                     System.out.println("Sams poäng:"+hp1);
-                    System.out.println(usernamne + "poäng:"+hp2);
+                    System.out.println(usernamne + " poäng:"+hp2);
                 }
-                
-        
-                for(int i = 0; i < 100000000; i++)
+            
+                for(int i = 0; i < 100000000; i++) 
                 {
                     tal += 5;
                 }
                 long slut_tid = System.currentTimeMillis();
-                long tid = slut_tid - start_tid;
-               
-        
-                System.out.println("Din tid: " + tid + "Millisekunder");
-                
-        }      
-
-
-
-reader.close(); // Scanner klagar, stänga Scannern
-    }   
+                long tid = slut_tid - start_tid; // räknar ut tiden
+                System.out.println("Din tid: " + tid + " Millisekunder"+ "\n\n");
     
+        }      
+        System.out.println("Vill du spela igen?");
+        String slut = reader.nextLine();
+
+        reader.close(); // Scanner klagar, stänga Scannern
+    }   
 }
