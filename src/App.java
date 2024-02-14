@@ -10,7 +10,7 @@ public class App {
     public static String PURPLE = "\u001B[35m";
     public static String GREEN = "\u001B[32m";
     public static String WHITE = "\u001B[37m";
-    public static String GUL ="\u001B[33m\t";
+    public static String YELLOW ="\u001B[33m";
 
     public static void main(String[] args) throws Exception {
         Scanner reader = new Scanner(System.in);
@@ -26,8 +26,8 @@ public class App {
             int tal = 5;
         
             System.out.println(BLUE+"SLÅSS MED SAM!" + "\n\n");
-            System.out.println("Sam slog och kidnappade din stackas mamma och tog allt ditt godis och din dator");
-            System.out.println("Nu måste du slåss med honom för att vinna tillbaka dina mamma och dina saker!!!!");
+            System.out.println("Sam slog och kidnappade din stackars mamma och tog allt ditt godis och din dator");
+            System.out.println("Nu måste du slåss med honom för att vinna tillbaka dina saker och dina mamma!!!!");
             System.out.print("Välj ett spelnamn för spelare 2: "+RESET	);
             String usernamne = reader.nextLine();
 
@@ -49,8 +49,8 @@ public class App {
                 hp2--;
             }
             
-            System.out.println(GUL+"Sams Hälsopoäng:" + hp1+RESET);
-            System.out.println(usernamne + " Hälsopoäng:" + hp2);
+            System.out.println(YELLOW +"Sams Hälsopoäng:" + hp1 + RESET);
+            System.out.println(YELLOW + usernamne + " Hälsopoäng:" + hp2 + RESET);
             Thread.sleep(4000);
 
             int ettrandomInt = rand.nextInt(11); // Genererar ett slumptal mellan 0-10
@@ -58,7 +58,7 @@ public class App {
 
 
             //runda 2
-            System.out.println(GREEN+"Runda " + runda++ +":Sam är påväg att sparka dig i höften! Kommer du ta eller blocka sparken? Tyck enter för att fortsätta."+RESET);
+            System.out.println(GREEN+"Runda " + runda++ +":Sam är påväg att sparka dig i höften! Kommer du ta eller blocka sparken? Tyck ENTER för att fortsätta."+RESET);
             reader.nextLine();
 
             if(ettrandomInt>=tvårandomInt) // Jämför de två slumpmässigt genererade talen, spelaren med mindre talet förlorar ett hälsopoäng
@@ -70,13 +70,13 @@ public class App {
                 System.out.println("Du fick ont med klarade dig, den här gången..." + "\n");
                 // Ingen förlorar hälso poäng
             }
-            System.out.println(GUL+ "Sams Hälsopoäng:" + hp1+RESET);
-            System.out.println(GUL+ usernamne + " Hälsopoäng:" + hp2 + "\n"+RESET);
+            System.out.println(YELLOW +"Sams Hälsopoäng:" + hp1 + RESET);
+            System.out.println(YELLOW + usernamne + " Hälsopoäng:" + hp2 + RESET);
             Thread.sleep(4000);
 
 
             //runda 3 
-            System.out.println(GREEN+"Runda " + runda++ +":Du slår sam i ansiktet trots dina skador...Tyck enter för att fortsätta"+RESET);
+            System.out.println(GREEN+"Runda " + runda++ +":Du slår sam i ansiktet trots dina skador...Tyck ENTER för att fortsätta"+RESET);
             reader.nextLine();
             if(rand.nextInt(2) == 1) // 0-1 , 50/50 chans
                 {
@@ -88,9 +88,9 @@ public class App {
                     hp1--;// Sam förlorar hälso poäng
                 }
 
-            System.out.println("Sams Hälsopoäng:" + hp1);
-            System.out.println(usernamne + " Hälsopoäng:" + hp2 + "\n");
-            Thread.sleep(4000);
+                System.out.println(YELLOW +"Sams Hälsopoäng:" + hp1 + RESET);
+                System.out.println(YELLOW + usernamne + " Hälsopoäng:" + hp2 + RESET);
+                Thread.sleep(4000);
 
 
             //runda 4
@@ -99,8 +99,8 @@ public class App {
             System.out.println("2: Armbågen");
             System.out.println("3: Tibia");
 
-            String Val = reader.nextLine(); // Användarens svar
-            switch (Val) { 
+            String val = reader.nextLine(); // Användarens svar
+            switch (val) { 
                 case "1":
                     System.out.println("Sam fick ont och tittade på dig konstigt");
                     hp1--; // Sam förlorar 1 hälsopoäng
@@ -115,13 +115,13 @@ public class App {
                     hp2--; // Spelare 2 (du) förlorar 1 hälsopoäng
                     break;
             }
-            System.out.println(GUL+"Sams Hälsopoäng:" + hp1);
-            System.out.println(usernamne + " Hälsopoäng:" + hp2 + "\n"+RESET);
+            System.out.println(YELLOW +"Sams Hälsopoäng:" + hp1 + RESET);
+            System.out.println(YELLOW + usernamne + " Hälsopoäng:" + hp2 + RESET);
             Thread.sleep(4000);
 
 
             //runda 5
-            System.out.println(GREEN+"Runda " + runda++ +":Sam sparkar ditt lår med sitt smalben, vad händer sen? Tyck enter för att fortsätta"+RESET);
+            System.out.println(GREEN+"Runda " + runda++ +":Sam sparkar ditt lår med sitt smalben, vad händer sen? Tyck ENTER för att fortsätta"+RESET);
             reader.nextLine();
 
             if(rand.nextInt(2) == 1) // 0-1 , 50/50 chans
@@ -134,9 +134,9 @@ public class App {
                     hp1--;// Sam förlorar hälso poäng
                 }
                 
-            System.out.println(GUL+"Sams Hälsopoäng:" + hp1);
-            System.out.println(usernamne + " Hälsopoäng:" + hp2 + "\n"+RESET);
-            Thread.sleep(4000);
+                System.out.println(YELLOW +"Sams Hälsopoäng:" + hp1 + RESET);
+                System.out.println(YELLOW + usernamne + " Hälsopoäng:" + hp2 + RESET);
+                Thread.sleep(4000);
 
 
             //runda 6
@@ -145,8 +145,13 @@ public class App {
             System.out.println("2: Putta iväg honsom");
             System.out.println("3: Äta lunch");
 
-            Val= reader.nextLine(); // Användarens svar
-            switch (Val) { 
+            System.out.println(GREEN+"Runda " + runda++ +":Sam kommer emot dig vad ska du göra? välj mellan 1, 2 eller 3."+RESET);
+            System.out.println("1: Springa iväg!");
+            System.out.println("2: Putta iväg honsom");
+            System.out.println("3: Äta lunch");
+
+            val= reader.nextLine(); // Användarens svar
+            switch (val) { 
                 case "1":
                     System.out.println("Fegt...");
                     hp1--; // Sam förlorar hp
@@ -161,14 +166,32 @@ public class App {
                     break;
             }
             
-            System.out.println(GUL+"Sams Hälsopoäng:" + hp1+RESET);
-            System.out.println(
-            usernamne + " Hälsopoäng:" + hp2 + "\n"+RESET);
+            System.out.println(YELLOW +"Sams Hälsopoäng:" + hp1 + RESET);
+            System.out.println(YELLOW + usernamne + " Hälsopoäng:" + hp2 + RESET);
+            Thread.sleep(4000);
+            val= reader.nextLine(); // Användarens svar
+            switch (val) { 
+                case "1":
+                    System.out.println("Fegt...");
+                    hp1--; // Sam förlorar hp
+                    break;
+                case "2":
+                    System.out.println("Sam blev arg och slog dig i revbenen"); 
+                    hp2--; //Spelare 2 förlorar hp
+                    break; 
+                case "3":
+                    System.out.println("Nej, fokus!!!!!!" + "\n");
+                    hp2--; // Spelare 2 (du) förlorar 1 hälsopoäng
+                    break;
+            }
+            
+            System.out.println(YELLOW +"Sams Hälsopoäng:" + hp1 + RESET);
+            System.out.println(YELLOW + usernamne + " Hälsopoäng:" + hp2 + RESET);
             Thread.sleep(4000);
 
 
             //runda 7
-            System.out.println(GREEN+"Runda " + runda++ +":Du ser din mamma hon ropar på din hjälp sam tar fram en gaffel...Tyck enter för att fortsätta"+RESET);
+            System.out.println(GREEN+"Runda " + runda++ +":Du ser din mamma hon ropar på din hjälp sam tar fram en gaffel...Tyck ENTER för att fortsätta"+RESET);
             reader.nextLine();
 
             if(rand.nextInt(2) == 1) // 0-1 , 50/50 chans
@@ -180,8 +203,62 @@ public class App {
                 System.out.println("Du tog gaffeln och högg Sam i armen" + "\n\n");
                 hp1--;// Sam förlorar hälso poäng
             }
-            System.out.println(GUL+"Sams Hälsopoäng:" + hp1);
-            System.out.println(usernamne + " Hälsopoäng:" + hp2 + "\n"+RESET);
+            System.out.println(YELLOW +"Sams Hälsopoäng:" + hp1 + RESET);
+            System.out.println(YELLOW + usernamne + " Hälsopoäng:" + hp2 + RESET);
+            Thread.sleep(4000);
+
+            //runda 8
+            System.out.println(GREEN+"Runda " + runda++ +":Du får välja mellan din mamma eller din dator, vad väjler du svara 1 eller 2?."+RESET);
+            System.out.println("1: Springa iväg!");
+            System.out.println("2: Putta iväg honsom");
+
+            val= reader.nextLine(); // Användarens svar
+            switch (val) { // Gemför andvändaren val med case
+                case "1":
+                    System.out.println("Du valde din mamma du är hon fri!!");
+                    hp1--; // Sam förlorar hp
+                    break;
+                case "2":
+                    System.out.println("Du valde din dator över din mamma??"); 
+                    hp2--; //Spelare 2 förlorar hp
+                    break; 
+            }
+            System.out.println(YELLOW +"Sams Hälsopoäng:" + hp1 + RESET);
+            System.out.println(YELLOW + usernamne + " Hälsopoäng:" + hp2 + RESET);
+            Thread.sleep(4000);
+
+            //runda 9
+            System.out.println(GREEN+"Runda " + runda++ +":Nu måste du slåss med sam för att hämnas...Tyck ENTER för att fortsätta"+RESET);
+            reader.nextLine();
+
+            if(rand.nextInt(2) == 1) // 0-1 , 50/50 chans
+            {
+                System.out.println(" Du satt på sidan och åt ditt godis...");
+                hp1--; // Spelare 2 förlora hälsopoäng -1
+            }
+            else{
+                System.out.println(" Du slog Sam i ansiktet och sparkade honom i magen så att han flög backåt " + "\n\n");
+                hp1--;// Sam förlorar hälso poäng
+            }
+            System.out.println(YELLOW +"Sams Hälsopoäng:" + hp1 + RESET);
+            System.out.println(YELLOW + usernamne + " Hälsopoäng:" + hp2 + RESET);
+            Thread.sleep(4000);
+
+            //10
+            System.out.println(GREEN+"Runda " + runda++ +"Vem vinner dne avgörande rudna...Tyck ENTER för att fortsätta"+RESET);
+            reader.nextLine();
+
+            if(rand.nextInt(2) == 1) // 0-1 , 50/50 chans
+            {
+                System.out.println(" Sam ledsnade på dig och gick iväg");
+                hp1--; // Spelare 2 förlora hälsopoäng -1
+            }
+            else{
+                System.out.println(" Du dödade Sam och tog hans pengar(4kr) " + "\n\n");
+                hp1--;// Sam förlorar hälso poäng
+            }
+            System.out.println(YELLOW +"Sams Hälsopoäng:" + hp1 + RESET);
+            System.out.println(YELLOW + usernamne + " Hälsopoäng:" + hp2 + RESET);
             Thread.sleep(4000);
 
             //slut text
@@ -207,7 +284,14 @@ public class App {
     
         }      
         System.out.println("Vill du spela igen?");
-        String slut = reader.nextLine();
+        String ny = reader.nextLine();
+        if (ny.equalsIgnoreCase("Ja")) {
+            hp1 = 5;
+            hp2 = 5;
+        }
+        else{
+            System.out.println("Tack för att du spelade mitt spel :)" );
+        }
 
         reader.close(); // Scanner klagar, stänga Scannern
     }   
