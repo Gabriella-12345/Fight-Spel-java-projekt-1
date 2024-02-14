@@ -283,6 +283,7 @@ public class App {
                 System.out.println("Din tid: " + tid + " Millisekunder"+ "\n\n");
     
         }      
+        
         System.out.println("Vill du spela igen?");
         String ny = reader.nextLine();
         if (ny.equalsIgnoreCase("Ja")) {
